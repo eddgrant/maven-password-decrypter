@@ -2,7 +2,7 @@ package com.eddgrant.mpd
 
 class SettingsSecurityParser {
 
-  String parse(final String settingsSecurityFilePath) {
+  String getMasterPassword(final String settingsSecurityFilePath) {
     final File settingsSecurityFile = new File(settingsSecurityFilePath)
     if(! settingsSecurityFile.exists()) {
       throw new FileNotFoundException(fnfMsg(settingsSecurityFilePath))
