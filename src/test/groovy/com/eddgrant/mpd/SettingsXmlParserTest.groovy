@@ -33,8 +33,8 @@ class SettingsXmlParserTest {
       assert "u${index}" == servers[index - 1].username
     }
 
-    assert "This is server 1's password {MPjrTeXO+YsHfubYx4j0PZw28rVgohZ8+dT7SCtV/b8WC0fCYMEfmghCWGRCWPQI}" == servers[0].password
-    assert "This is server 2's password {TGpcenEFDiEHwTO7by4Cl8abcroksbkqw6OQpwqpIvPQibq3LOe6ldAm6Hcx4buk}" == servers[1].password
-    assert "This is server 3's password {awMKcT+AK78H1j6bGz0IumpS6fm8ZLfzU16/SSL4z1rKUMsIzh2rLfMMgqOnGqJ4}" == servers[2].password
+    assert "This is server 1's password {MPjrTeXO+YsHfubYx4j0PZw28rVgohZ8+dT7SCtV/b8WC0fCYMEfmghCWGRCWPQI}" == servers[0].encryptedPassword
+    assert "This is server 2's password {TGpcenEFDiEHwTO7by4Cl8abcroksbkqw6OQpwqpIvPQibq3LOe6ldAm6Hcx4buk}" == servers[1].encryptedPassword
+    assert "This is server 3's password {awMKcT+AK78H1j6bGz0IumpS6fm8ZLfzU16/SSL4z1rKUMsIzh2rLfMMgqOnGqJ4}" == servers[2].encryptedPassword
   }
 }

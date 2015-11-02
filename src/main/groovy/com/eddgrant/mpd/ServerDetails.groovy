@@ -2,11 +2,11 @@ package com.eddgrant.mpd
 
 import groovy.transform.ToString
 
-@ToString(excludes = ['password'])
+@ToString(excludes = ['decryptedPassword'])
 class ServerDetails {
 
   String id
   String username
-  String password
-
+  String encryptedPassword
+  String decryptedPassword
 }

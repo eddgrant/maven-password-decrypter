@@ -11,7 +11,7 @@ class SettingsXmlParser extends AbstractFileParser {
 
         servers.add(new ServerDetails(id: server?.id.text(),
                                       username: server?.username.text(),
-                                      password: server?.password?.text()))
+                                      encryptedPassword: server?.password?.text()))
       }
     }
     return servers
