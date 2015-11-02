@@ -1,0 +1,19 @@
+<settings>
+  <servers>
+    <server>
+      <id>1</id>
+      <username>u1</username>
+      <password>This is server 1's password {MPjrTeXO+YsHfubYx4j0PZw28rVgohZ8+dT7SCtV/b8WC0fCYMEfmghCWGRCWPQI}</password>
+    </server>
+    <server>
+      <id>2</id>
+      <username>u2</username>
+      <password>This is server 2's password {TGpcenEFDiEHwTO7by4Cl8abcroksbkqw6OQpwqpIvPQibq3LOe6ldAm6Hcx4buk}</password>
+    </server>
+    <server>
+      <id>3</id>
+      <username>u3</username>
+      <password>This is server 3's password {awMKcT+AK78H1j6bGz0IumpS6fm8ZLfzU16/SSL4z1rKUMsIzh2rLfMMgqOnGqJ4}</password>
+    </server>
+  </servers>
+</settings>
