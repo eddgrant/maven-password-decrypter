@@ -12,8 +12,8 @@ class MavenPasswordDecrypter {
 
   private SettingsXmlParser settingsXmlParser
 
-  public MavenPasswordDecrypter(final SettingsSecurityParser settingsSecurityParser,
-                                final SettingsXmlParser settingsXmlParser,
+  public MavenPasswordDecrypter(final SettingsSecurityParser settingsSecurityParser = new SettingsSecurityParser(),
+                                final SettingsXmlParser settingsXmlParser = new SettingsXmlParser(),
                                 final PlexusCipher cipher = new DefaultPlexusCipher()) {
     this.settingsSecurityParser = settingsSecurityParser
     this.settingsXmlParser = settingsXmlParser
@@ -31,6 +31,18 @@ class MavenPasswordDecrypter {
       serverDetail.decryptedPassword = decryptNonMasterPassword(serverDetail.encryptedPassword, masterPassword)
     }
     return serverDetails
+  }
+
+  public ServerDetails getServerDetail(final String settingsSecurityFilePath,
+                                       final String settingsXmlFilePath,
+                                       final String serverId) {
+    final String masterPassword = getMasterPassword(settingsSecurityFilePath)
+    final List<ServerDetails> serverDetails = getServerDetails(settingsXmlFilePath, masterPassword)
+    final ServerDetails serverDetail = serverDetails.find { it.id == serverId }
+    if(!serverDetail) {
+      throw new IllegalArgumentException("Server with id: '${serverId}' was not found in file: '${settingsXmlFilePath}'")
+    }
+    return serverDetail
   }
 
   private String decryptMasterPassword(final String decoratedAndEncryptedMasterPassword) {
