@@ -7,17 +7,17 @@
     <server>
       <id>1</id>
       <username>u1</username>
-      <password>This is server 1's password {MPjrTeXO+YsHfubYx4j0PZw28rVgohZ8+dT7SCtV/b8WC0fCYMEfmghCWGRCWPQI}</password>
+      <password>This is server 1's password {ScOluri2uPsHdurnBR4UPlCidn5Yllb/vBPkQIevKyz1pHe11A0Lpw48foQf65eT}</password>
     </server>
     <server>
       <id>2</id>
       <username>u2</username>
-      <password>This is server 2's password {TGpcenEFDiEHwTO7by4Cl8abcroksbkqw6OQpwqpIvPQibq3LOe6ldAm6Hcx4buk}</password>
+      <password>This is server 2's password {pgt7K+js3SsHULVNxo/U9mHI2gEhkUi1FmOnJ1ZDjY7r4nQwIJmXx94BCR0xwqYW}</password>
     </server>
     <server>
       <id>3</id>
       <username>u3</username>
-      <password>This is server 3's password {awMKcT+AK78H1j6bGz0IumpS6fm8ZLfzU16/SSL4z1rKUMsIzh2rLfMMgqOnGqJ4}</password>
+      <password>This is server 3's password {mU3PuwllB5wHbbLMkJ2T9wpA7Y2EHVVR4aDIDgprkeUPduc7DONbjBMXg6ViyfOl}</password>
     </server>
   </servers>
 </settings>

@@ -8,7 +8,7 @@ class SettingsSecurityParserTest {
 
   @Test
   public void shouldParseSettingsSecurityFile() {
-    final String expectedValue = "{t0hO7kTVVJgHnxGDD1Fovy3pGnht80FICNIZ4FE3Adw=}"
+    final String expectedValue = "{MDwC4EIeb44Hdjg4Dyc8bcfkcHuxm9EMEuD0Kyj6AwHZYb898KbjOlT5VwRfKylU}"
     def settingsSecurityFile = "src/test/resources/test-files/settings-security.xml"
     final String actualValue = new SettingsSecurityParser().getMasterPassword(settingsSecurityFile)
     assert expectedValue == actualValue

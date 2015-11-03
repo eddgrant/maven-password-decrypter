@@ -1,4 +1,4 @@
 <settingsSecurity>
-  <!-- The clear text password is: abcde12345 -->
-  <master>{t0hO7kTVVJgHnxGDD1Fovy3pGnht80FICNIZ4FE3Adw=}</master>
+  <!-- The clear text password is: "This is my master password" -->
+  <master>{MDwC4EIeb44Hdjg4Dyc8bcfkcHuxm9EMEuD0Kyj6AwHZYb898KbjOlT5VwRfKylU}</master>
 </settingsSecurity>

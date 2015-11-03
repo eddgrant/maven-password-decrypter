@@ -5,6 +5,8 @@ import org.junit.Test
 
 class MavenPasswordDecrypterTest {
 
+  private static final String MASTER_PASSWORD = "This is my master password"
+
   private SettingsSecurityParser settingsSecurityParser
 
   private SettingsXmlParser settingsXmlParser
@@ -21,15 +23,13 @@ class MavenPasswordDecrypterTest {
   @Test
   public void shouldDecryptMasterPassword() {
     final String filePath = "src/test/resources/test-files/settings-security.xml"
-    final String expectedPassword = "12345abcde"
-    assert expectedPassword == mavenPasswordDecrypter.getMasterPassword(filePath)
+    assert MASTER_PASSWORD == mavenPasswordDecrypter.getMasterPassword(filePath)
   }
 
   @Test
   public void shouldDecryptServerPasswords() {
     final String filePath = "src/test/resources/test-files/settings-with-multiple-server-entries.xml"
-    final String masterPassword = "This is my master password"
-    final List<ServerDetails> returnedServerDetails = mavenPasswordDecrypter.getServerDetails(filePath, masterPassword)
+    final List<ServerDetails> returnedServerDetails = mavenPasswordDecrypter.getServerDetails(filePath, MASTER_PASSWORD)
     (1..3).each { index ->
       assert "${index}" == returnedServerDetails[index -1].id
       assert "u${index}" == returnedServerDetails[index -1].username
