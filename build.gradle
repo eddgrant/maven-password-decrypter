@@ -6,10 +6,11 @@ buildscript {
 
 plugins {
   id "com.jfrog.bintray" version "1.4"
+  id "maven-publish"
 }
 
 group 'com.eddgrant'
-version '0.0.1'
+version '0.0.4'
 
 apply plugin: 'groovy'
 
@@ -28,21 +29,36 @@ dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
+publishing {
+  publications {
+    MavenPasswordDecrypter(MavenPublication) {
+      from components.java
+      groupId project.group
+      artifactId project.name
+      version project.version
+      pom.withXml {
+        asNode().appendNode('description', 'A utility for decrypting and using Maven passwords')
+        asNode().appendNode
+      }
+    }
+  }
+}
+
 bintray {
   user = System.getenv('BINTRAY_USER')
   key = System.getenv('BINTRAY_API_KEY')
   configurations = ['archives']
+  publications = ['MavenPasswordDecrypter']
   pkg {
     repo = 'maven'
-    name = 'maven-password-decrypter'
+    name = project.name
     licenses = ['Apache-2.0']
     vcsUrl = 'https://github.com/eddgrant/maven-password-decrypter.git'
     version {
-      name = '0.0.1'
-      desc = 'Maven Password Decrypter v0.0.1'
+      name = project.version
+      desc = "Maven Password Decrypter: v${project.version}"
       released  = new Date()
-      vcsTag = '0.0.1'
-      attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+      vcsTag = project.version
     }
   }
 }
