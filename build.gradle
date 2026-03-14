@@ -1,6 +1,6 @@
 buildscript {
   project.ext {
-    groovyVersion = "2.4.3"
+    groovyVersion = "3.0.25"
   }
 }
 
